@@ -4,31 +4,30 @@
 
 This project was completed as part of the **iNeuBytes AI Internship**.
 
-The objective of this task was to design, implement, and compare two Convolutional Neural Network (CNN) models for image classification using the **CIFAR-10** dataset.
+The objective of this task was to build and compare two Convolutional Neural Network (CNN) models for image classification using the **CIFAR-10** dataset.
 
 The project consists of two parts:
 
-- **Part A:** Traditional/Baseline CNN
-- **Part B:** Customized CNN with architectural improvements
+- **Part A:** Baseline CNN
+- **Part B:** Customized CNN
 
-The customized CNN incorporates several deep learning techniques to improve classification performance while maintaining the same training configuration for a fair comparison.
+The customized CNN introduces several architectural improvements to enhance image classification performance while maintaining the same training setup for a fair comparison.
 
 ---
 
-# Dataset
+## Dataset
 
-The project uses the **CIFAR-10** dataset, a widely used benchmark dataset for image classification.
+The project uses the **CIFAR-10** dataset.
 
 ### Dataset Details
 
-- Total Images: **60,000**
-- Training Images: **50,000**
-- Testing Images: **10,000**
-- Image Size: **32 × 32 RGB**
-- Number of Classes: **10**
+- **Total Images:** 60,000
+- **Training Images:** 50,000
+- **Testing Images:** 10,000
+- **Image Size:** 32 × 32 RGB
+- **Number of Classes:** 10
 
 Classes:
-
 - Airplane
 - Automobile
 - Bird
@@ -40,37 +39,22 @@ Classes:
 - Ship
 - Truck
 
-Images were normalized by scaling pixel values between **0 and 1** before training.
+Before training, all images were normalized by scaling pixel values to the range **0–1**.
 
 ---
 
-# Project Structure
+## Files Included
 
-```
-Task1/
-│
-├── Task1_PartA_BaselineCNN.ipynb
-├── Task1_PartB_ImprovedCNN.ipynb
-├── README.md
-├── requirements.txt
-│
-├── images/
-│   ├── baseline_architecture.png
-│   ├── improved_architecture.png
-│   ├── baseline_training_curves.png
-│   ├── improved_training_curves.png
-│   ├── baseline_confusion_matrix.png
-│   └── improved_confusion_matrix.png
-│
-└── report/
-    └── Task1_Report.pdf
-```
+- `Task1_PartA_BaselineCNN.ipynb`
+- `Task1_PartB_CustomizedCNN.ipynb`
+- `README.md`
+- `requirements.txt`
 
 ---
 
-# Part A – Baseline CNN
+## Part A – Baseline CNN
 
-The baseline model implements a traditional CNN architecture consisting of:
+The baseline CNN was implemented using:
 
 - Convolutional Layers
 - ReLU Activation
@@ -80,44 +64,26 @@ The baseline model implements a traditional CNN architecture consisting of:
 - Dropout
 - Adam Optimizer
 
-The model was trained for **12 epochs** using the CIFAR-10 dataset.
-
-Evaluation included:
-
-- Training Accuracy
-- Validation Accuracy
-- Test Accuracy
-- Confusion Matrix
-- Classification Report
+The model was trained for **12 epochs** and evaluated using standard classification metrics.
 
 ---
 
-# Part B – Customized CNN
+## Part B – Customized CNN
 
-The customized CNN was designed to improve the baseline model by introducing several architectural enhancements.
-
-### Improvements Implemented
+The customized CNN improves the baseline architecture by introducing:
 
 - Additional Convolutional Layers
 - Batch Normalization
 - Data Augmentation
 - Dropout Regularization
-- Optimized CNN Architecture
-- Adam Optimizer
 - Learning Rate Scheduling
+- Adam Optimizer
 
-To ensure a fair comparison, the following settings remained unchanged:
-
-- Same training dataset
-- Same validation dataset
-- Same testing dataset
-- Same random seed
-- Same batch size
-- Same number of training epochs (12)
+The same training, validation, and testing split was maintained to ensure a fair comparison with the baseline model.
 
 ---
 
-# Results
+## Results
 
 | Metric | Baseline CNN | Customized CNN |
 |---------|-------------:|---------------:|
@@ -125,44 +91,27 @@ To ensure a fair comparison, the following settings remained unchanged:
 | Training Time | 138.94 sec | 335.43 sec |
 | Epochs | 12 | 12 |
 | Parameters | 5,870,666 | 5,874,250 |
-| Accuracy Improvement | — | **+12.80 percentage points** |
+| Accuracy Improvement | **+12.80 percentage points** |
 
-The customized CNN exceeded the internship target of improving the baseline accuracy by at least **3 percentage points**, achieving an improvement of **12.80 percentage points**.
-
----
-
-# Key Enhancements
-
-The customized CNN achieved better performance due to the following improvements:
-
-- **Additional Convolutional Layers** for richer feature extraction.
-- **Batch Normalization** to stabilize training and improve convergence.
-- **Data Augmentation** to improve model generalization by exposing the network to transformed images.
-- **Dropout Regularization** to reduce overfitting.
-- **Learning Rate Scheduling** to optimize training performance.
-- **Optimizer Tuning** using the Adam optimizer.
-
-These improvements enabled the model to learn more robust image representations, resulting in significantly higher classification accuracy.
+The customized CNN successfully exceeded the internship target of improving the baseline model by at least **3 percentage points**, achieving an improvement of **12.80 percentage points**.
 
 ---
 
-# Performance Evaluation
+## Key Improvements
 
-The models were evaluated using:
+The customized CNN achieved better performance by incorporating:
 
-- Test Accuracy
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
-- Classification Report
-- Training Time
+- Additional convolutional layers for better feature extraction.
+- Batch Normalization to stabilize and accelerate training.
+- Data Augmentation to improve generalization.
+- Dropout Regularization to reduce overfitting.
+- Learning Rate Scheduling for improved optimization.
 
-Training and validation accuracy/loss curves were also generated to analyze the learning behavior of both models.
+These enhancements significantly improved the model's ability to classify images, resulting in higher test accuracy.
 
 ---
 
-# Technologies Used
+## Technologies Used
 
 - Python
 - TensorFlow
@@ -175,15 +124,9 @@ Training and validation accuracy/loss curves were also generated to analyze the 
 
 ---
 
-# Installation
+## Installation
 
-Clone the repository:
-
-```bash
-git clone <repository-link>
-```
-
-Install the required dependencies:
+Install the required libraries:
 
 ```bash
 pip install -r requirements.txt
@@ -191,29 +134,27 @@ pip install -r requirements.txt
 
 ---
 
-# How to Run
+## How to Run
 
 1. Open the notebooks in Google Colab or Jupyter Notebook.
 2. Install the required dependencies.
-3. Run all cells sequentially.
+3. Run all notebook cells sequentially.
 4. The notebooks will:
-   - Load the dataset
-   - Preprocess the images
+   - Load and preprocess the dataset
    - Train the CNN model
-   - Evaluate performance
-   - Generate training curves
-   - Generate confusion matrices
-   - Display the final comparison between Part A and Part B
+   - Evaluate model performance
+   - Generate training and validation graphs
+   - Display confusion matrices
+   - Compare the baseline and customized CNN models
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
-Through this project, the following concepts were explored:
+This project provided hands-on experience with:
 
 - Image preprocessing
-- Convolutional Neural Networks
-- Feature extraction
+- Convolutional Neural Networks (CNNs)
 - Batch Normalization
 - Dropout Regularization
 - Data Augmentation
@@ -223,8 +164,8 @@ Through this project, the following concepts were explored:
 
 ---
 
-# Author
+## Author
 
 **Poorva Singh**
 
-AI Internship Project – Task 1
+AI Internship – Task 1
